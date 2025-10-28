@@ -1,0 +1,1825 @@
+{
+	"products": [
+		{
+			"name": "deploy-arch-ibm-slz-ocp",
+			"product_kind": "solution",
+			"tags": [
+				"ibm_created",
+				"compute",
+				"platform_engineering"
+			],
+			"keywords": [
+				"vpc",
+				"slz",
+				"IaC",
+				"infrastructure as code",
+				"terraform",
+				"ocp",
+				"cluster",
+				"red_hat_openshift",
+				"redhat",
+				"ROKS"
+			],
+			"short_description": "",
+			"long_description": "",
+			"offering_docs_url": "https://cloud.ibm.com/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-overview#overview-ocp",
+			"offering_icon_url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-base-ocp-vpc/main/images/ocp_icon.svg",
+			"features": [
+				{
+					"title_i18n": {
+						"de": "Erstellt Open Shift Container Platform-Cluster für Workloads",
+						"en": "Configurable OpenShift deployment options",
+						"es": "Crea clústeres de Open Shift Container Platform para cargas de trabajo",
+						"fr": "Crée des clusters Open Shift Container Platform pour les charges de travail",
+						"it": "Crea cluster di Open Shift Container Platform per carichi di lavoro",
+						"ja": "ワークロード用のオープン・シフト・コンテナ・プラットフォームのクラスターを作成する",
+						"ko": "워크로드를 위한 시프트 컨테이너 플랫폼 클러스터를 생성합니다.",
+						"pt-BR": "Cria clusters Open Shift Container Platform para as cargas de serviço",
+						"zh-Hans": "为工作负载创建 Open Shift Container Platform 集群",
+						"zh-Hant": "為工作負載建立 Open Shift Container Platform 叢集"
+					},
+					"description_i18n": {
+						"de": "Erstellt und konfiguriert einen oder mehrere Cluster zur Verarbeitung von Workloads. Sie können die Version und die Clustergröße angeben.",
+						"en": "Provides multiple configuration paths for provisioning [Red Hat OpenShift clusters](https://cloud.ibm.com/docs/openshift) on IBM Cloud VPC. Supports use cases ranging from quick experimentation to production-grade deployments in regulated environments. Capabilities vary by variation, with some offering simplified onboarding and others enabling advanced integrations and compliance alignment.",
+						"es": "Crea y configura uno o varios clústeres para manejar cargas de trabajo. Puede especificar la versión y el tamaño del clúster.",
+						"fr": "Crée et configure un ou plusieurs clusters pour gérer les charges de travail. Vous pouvez spécifier la version et la taille du cluster.",
+						"it": "Crea e configura uno o più cluster per gestire i carichi di lavoro. È possibile specificare la versione e la dimensione cluster.",
+						"ja": "ワークロードを処理する 1 つ以上のクラスターを作成して構成します。 バージョンとクラスター・サイズを指定できます。",
+						"ko": "워크로드를 처리할 하나 이상의 클러스터를 만들고 구성합니다. 사용자가 버전 및 클러스터 크기를 지정할 수 있습니다.",
+						"pt-BR": "Cria um ou mais clusters para manipular as cargas de trabalho. Pode-se especificar a versão e o tamanho do cluster.",
+						"zh-Hans": "创建并配置一个或多个集群以处理工作负载。 您可以指定版本和集群大小。",
+						"zh-Hant": "建立並配置一個以上叢集以處理工作負載。 您可以指定版本和叢集大小。"
+					}
+				},
+				{
+					"title": "Cluster connectivity",
+					"description": "Supports both [public and private access endpoints](https://cloud.ibm.com/docs/openshift?topic=openshift-access_cluster), enabling secure and flexible connectivity to the cluster based on your requirements."
+				},
+				{
+					"title": "Custom worker pools",
+					"description": "Supports configurable [worker pools](https://cloud.ibm.com/docs/openshift?topic=openshift-add-workers-vpc) to scale the cluster's compute capacity. Enables efficient management of worker nodes to support application growth, high availability, and workload distribution."
+				},
+				{
+					"title_i18n": {
+						"de": "Konfiguriert Teilnetze für Container",
+						"en": "Infrastructure Setup",
+						"es": "Configura subredes para contenedores",
+						"fr": "Configure les sous-réseaux pour les conteneurs",
+						"it": "Configura le sottoreti per i contenitori",
+						"ja": "コンテナーのサブネットを構成する",
+						"ko": "컨테이너에 대한 서브넷을 구성합니다.",
+						"pt-BR": "Configura sub-redes para contêineres",
+						"zh-Hans": "配置容器的子网",
+						"zh-Hant": "配置容器的子網路"
+					},
+					"description_i18n": {
+						"de": "Konfiguriert die Teilnetze für den Cluster und gibt die Teilnetze an, in denen die Workerknoten bereitgestellt werden sollen",
+						"en": "Automatically provisions multi-zone VPCs, [subnets](https://cloud.ibm.com/docs/openshift?topic=openshift-vpc-subnets\u0026interface=ui#vpc_basics_subnets), and networking components. QuickStart variations abstract this setup to minimize required IBM Cloud knowledge, while other configurations expose full control for advanced users.",
+						"es": "Configura las subredes para el clúster y especifica las subredes en las que desplegar los nodos trabajadores.",
+						"fr": "Configure les sous-réseaux du cluster et spécifie les sous-réseaux dans lesquels déployer les nœuds worker.",
+						"it": "Configura le sottoreti del cluster e specifica le sottoreti in cui distribuire i nodi di lavoro.",
+						"ja": "クラスターのサブネットを構成し、ワーカー・ノードをデプロイするサブネットを指定します。",
+						"ko": "클러스터에 대한 서브넷을 구성하고 작업자 노드를 배치할 서브넷을 지정합니다.",
+						"pt-BR": "Configura as sub-redes do cluster e as especifica em quais nós do trabalhador deverão ser implementadas.",
+						"zh-Hans": "配置集群的子网，并指定要在其中部署工作程序节点的子网。",
+						"zh-Hant": "配置叢集的子網路，並指定要在其中部署工作者節點的子網路。"
+					}
+				},
+				{
+					"title_i18n": {
+						"de": "Unterstützt private und öffentliche Endpunkte",
+						"en": "IBM Cloud Services Integrations",
+						"es": "Da soporte a puntos finales privados y públicos",
+						"fr": "Prend en charge les nœuds finaux privés et publics",
+						"it": "Supporta endpoint pubblici e privati",
+						"ja": "プライベート・エンドポイントとパブリック・エンドポイントをサポートする",
+						"ko": "개인 및 공용 엔드포인트를 지원합니다.",
+						"pt-BR": "Oferece suporte para terminais privados e públicos",
+						"zh-Hans": "支持专用端点和公共端点",
+						"zh-Hant": "支援專用和公用端點"
+					},
+					"description_i18n": {
+						"de": "Konfiguriert private und öffentliche Endpunkte für den Cluster.",
+						"en": "Depending on the variation, clusters may include integrations with IBM Cloud services such as [Key Protect](https://cloud.ibm.com/docs/openshift?topic=openshift-encryption-setup\u0026interface=ui), [Hyper Protect Crypto Services](https://cloud.ibm.com/catalog/services/hyper-protect-crypto-services), [Secrets Manager](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/deploy-arch-ibm-secrets-manager-6d6ebc76-7bbd-42f5-8bc7-78f4fabd5944-global), [Object Storage](https://cloud.ibm.com/docs/openshift?topic=openshift-storage-cos-understand), and Observability services.",
+						"es": "Configura puntos finales privados y públicos para el clúster.",
+						"fr": "Configure des nœuds finaux privés et publics pour le cluster.",
+						"it": "Configura endpoint pubblici e privati per il cluster.",
+						"ja": "クラスターのプライベート・エンドポイントとパブリック・エンドポイントを構成します。",
+						"ko": "클러스터에 대한 개인 및 공용 엔드포인트를 구성합니다.",
+						"pt-BR": "Configura os terminais privados e públicos para o cluster.",
+						"zh-Hans": "为集群配置专用端点和公共端点。",
+						"zh-Hant": "配置叢集的專用和公用端點。"
+					}
+				},
+				{
+					"title_i18n": {
+						"de": "Konfiguriert Ingress",
+						"en": "Security and Compliance Alignment",
+						"es": "Configura Ingress",
+						"fr": "Configure Ingress",
+						"it": "Configura ingresso",
+						"ja": "入口を構成する",
+						"ko": "Ingress 구성",
+						"pt-BR": "Configura o ingresso",
+						"zh-Hans": "配置入口",
+						"zh-Hant": "配置入口"
+					},
+					"description_i18n": {
+						"de": "Konfiguriert den Ingress-Controller für den Cluster, der für die Weiterleitung des externen Datenverkehrs an die entsprechenden Services im Cluster verantwortlich ist",
+						"en": "Advanced configurations include features such as [audit logging](https://cloud.ibm.com/docs/containers?topic=containers-health-audit#audit-api-server) and encryption key management, and may align with [IBM Cloud Framework for Financial Services](https://cloud.ibm.com/docs/framework-financial-services?topic=framework-financial-services-about) for production use in regulated environments.",
+						"es": "Configura el controlador de Ingress para el clúster, responsable de direccionar el tráfico externo a los servicios adecuados dentro del clúster.",
+						"fr": "Configure le contrôleur Ingress du cluster qui se charge d'acheminer le trafic externe vers les services appropriés dans le cluster.",
+						"it": "Configura il controller d'ingresso per il cluster, responsabile dell'instradamento del traffico esterno ai servizi appropriati all'interno del cluster.",
+						"ja": "クラスター内の適切なサービスへの外部トラフィックのルーティングを担当する、クラスターの 入口コントローラーを構成します。",
+						"ko": "외부 트래픽을 클러스터 내의 적절한 서비스로 라우팅하는 작업을 담당하는 클러스터의 Ingress 제어기를 구성합니다.",
+						"pt-BR": "Configura o controlador de ingresso para o cluster, responsável por rotear o tráfego externo para os serviços apropriados dentro do cluster.",
+						"zh-Hans": "为集群配置入口控制器，负责将外部流量路由到集群中的相应服务。",
+						"zh-Hant": "配置叢集的入口控制器，負責將外部資料流量遞送至叢集內的適當服務。"
+					}
+				},
+				{
+					"title": "Sets up logging for the OpenShift cluster",
+					"description": "Optionally, you can deploy [Cloud automation for Cloud Logs](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/deploy-arch-ibm-cloud-logs-63d8ae58-fbf3-41ce-b844-0fb5b85882ab-global) to route, alert, and visualize platform logs that are generated by your OpenShift cluster."
+				},
+				{
+					"title": "Sets up monitoring operational metrics for the OpenShift cluster",
+					"description": "Optionally, you can deploy [Cloud automation for Cloud Monitoring](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/deploy-arch-ibm-cloud-monitoring-73debdbf-894f-4c14-81c7-5ece3a70b67d-global) to measure how users and applications interact with your OpenShift cluster."
+				},
+				{
+					"title": "Sets up activity tracking for the OpenShift cluster",
+					"description": "Optionally, you can deploy [Cloud automation for Activity Tracker Event Routing](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/deploy-arch-ibm-activity-tracker-918453c3-4f97-4583-8c4a-83ef12fc7916-global) to route and securely store auditing events that are related to your OpenShift cluster."
+				}
+			],
+			"flavors": [
+				{
+					"label": "[Experimental] Standard - Integrated setup with configurable services",
+					"name": "fully-configurable",
+					"index": 2,
+					"licenses": [],
+					"compliance": {
+						"authority": "scc-v3",
+						"profiles": [
+							{
+								"profile_name": "IBM Cloud Framework for Financial Services",
+								"profile_version": "1.7.0"
+							}
+						]
+					},
+					"iam_permissions": [
+						{
+							"service_name": "Resource group only",
+							"role_crns": [
+								"crn:v1:bluemix:public:iam::::role:Viewer"
+							],
+							"notes": "Viewer access is required in the resource group you want to provision in."
+						},
+						{
+							"service_name": "All Identity and Access enabled services",
+							"role_crns": [
+								"crn:v1:bluemix:public:iam::::role:Administrator"
+							],
+							"notes": "[Optional] Required to to create trusted profile for App Configuration aggregator which is used for compliance scanning."
+						},
+						{
+							"service_name": "iam-groups",
+							"role_crns": [
+								"crn:v1:bluemix:public:iam::::role:Editor"
+							],
+							"notes": "[Optional] Required for managing IAM access groups."
+						},
+						{
+							"service_name": "iam-identity",
+							"role_crns": [
+								"crn:v1:bluemix:public:iam::::role:Operator",
+								"crn:v1:bluemix:public:iam-identity::::serviceRole:UserApiKeyCreator"
+							],
+							"notes": "Required to create the containers-kubernetes-key for the OpenShift cluster."
+						},
+						{
+							"service_name": "hs-crypto",
+							"role_crns": [
+								"crn:v1:bluemix:public:iam::::serviceRole:Manager",
+								"crn:v1:bluemix:public:iam::::role:Editor"
+							],
+							"notes": "[Optional] Required if Hyper Protect Crypto Service is used for encryption."
+						},
+						{
+							"service_name": "kms",
+							"role_crns": [
+								"crn:v1:bluemix:public:iam::::serviceRole:Manager",
+								"crn:v1:bluemix:public:iam::::role:Editor"
+							],
+							"notes": "[Optional] Required if Key Protect is used for encryption."
+						},
+						{
+							"service_name": "cloud-object-storage",
+							"role_crns": [
+								"crn:v1:bluemix:public:iam::::serviceRole:Manager",
+								"crn:v1:bluemix:public:iam::::role:Editor"
+							],
+							"notes": "Required to manage Object storage for the cluster internal registry."
+						},
+						{
+							"service_name": "containers-kubernetes",
+							"role_crns": [
+								"crn:v1:bluemix:public:iam::::serviceRole:Manager",
+								"crn:v1:bluemix:public:iam::::role:Administrator"
+							],
+							"notes": "Required to create and manage the Openshift cluster."
+						},
+						{
+							"service_name": "is.vpc",
+							"role_crns": [
+								"crn:v1:bluemix:public:iam::::role:Editor"
+							],
+							"notes": "Required to create VPC."
+						},
+						{
+							"service_name": "secrets-manager",
+							"role_crns": [
+								"crn:v1:bluemix:public:iam::::role:Editor",
+								"crn:v1:bluemix:public:iam::::serviceRole:Manager"
+							],
+							"notes": "[Optional] Required when enabling the Secrets Manager integration."
+						},
+						{
+							"service_name": "sysdig-monitor",
+							"role_crns": [
+								"crn:v1:bluemix:public:iam::::role:Editor",
+								"crn:v1:bluemix:public:iam::::serviceRole:Manager"
+							],
+							"notes": "[Optional] Required to create an instance of Cloud Monitoring."
+						},
+						{
+							"service_name": "logs",
+							"role_crns": [
+								"crn:v1:bluemix:public:iam::::role:Editor",
+								"crn:v1:bluemix:public:iam::::serviceRole:Manager"
+							],
+							"notes": "[Optional] Required to create an instance of Cloud Logs."
+						},
+						{
+							"service_name": "logs-router",
+							"role_crns": [
+								"crn:v1:bluemix:public:iam::::serviceRole:Manager"
+							],
+							"notes": "[Optional] Required for configuring Cloud Logs routing."
+						},
+						{
+							"service_name": "atracker",
+							"role_crns": [
+								"crn:v1:bluemix:public:iam::::serviceRole:Writer",
+								"crn:v1:bluemix:public:iam::::role:Editor"
+							],
+							"notes": "[Optional] Required to set up Activity Tracker event routing of auditing events."
+						},
+						{
+							"service_name": "sysdig-secure",
+							"role_crns": [
+								"crn:v1:bluemix:public:iam::::serviceRole:Manager",
+								"crn:v1:bluemix:public:iam::::role:Editor"
+							],
+							"notes": "[Optional] Required for creating and managing SCC Workload Protection instance."
+						},
+						{
+							"service_name": "apprapp",
+							"role_crns": [
+								"crn:v1:bluemix:public:iam::::role:Administrator",
+								"crn:v1:bluemix:public:iam::::serviceRole:Manager"
+							],
+							"notes": "[Optional] Required for provisioning the App Configuration instance."
+						},
+						{
+							"service_name": "event-notifications",
+							"role_crns": [
+								"crn:v1:bluemix:public:iam::::serviceRole:Manager",
+								"crn:v1:bluemix:public:iam::::role:Editor"
+							],
+							"notes": "[Optional] Required when enabling the Event Notifications integration."
+						}
+					],
+					"architecture": {
+						"features": [
+							{
+								"title": " ",
+								"description": "Ideal for users who want flexibility with a reliable starting point."
+							},
+							{
+								"title": " ",
+								"description": "Offers full control over architecture parameters, with well-chosen defaults that enable a functional OpenShift cluster and integrated IBM Cloud services without requiring manual adjustments."
+							}
+						],
+						"diagrams": [
+							{
+								"diagram": {
+									"url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-base-ocp-vpc/refs/heads/main/reference-architectures/deployable-architecture-ocp-cluster.svg",
+									"caption": "Red Hat OpenShift cluster topology - Standard (Integrated setup with configurable services)",
+									"type": "image/svg+xml"
+								},
+								"description": "This architecture supports creation of \u003cb\u003eRed Hat OpenShift cluster\u003c/b\u003e within a Virtual Private Cloud (VPC).\u003cbr\u003e\u003cbr\u003eYou can create a fully-configured \u003cb\u003eVPC\u003c/b\u003e by selecting the [Cloud foundation for VPC](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/deploy-arch-ibm-vpc-2af61763-f8ef-4527-a815-b92166f29bc8-global) as a dependency or you can use an existing VPC if any. You can set up a single zone or multi-zone VPC environment. You can configure the default number of worker pools to cater to worker nodes spread across different zones in this VPC cluster. \u003cbr\u003e\u003cbr\u003eThis architecture creates a \u003cb\u003eCloud Object Storage (COS)\u003c/b\u003e instance and an Object Storage bucket within this instance, to serve as the internal registry storage for the OpenShift cluster. The [Cloud automation for Object Storage](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/deploy-arch-ibm-cos-68921490-2778-4930-ac6d-bae7be6cd958-global) architecture supports the creation of COS instance. Additionally, you can opt the following services to create a robust and secure foundation to deploy and manage your Red Hat OpenShift cluster.\u003cbr\u003e\u003cb\u003e- Key Management Services(KMS)\u003c/b\u003e is used to encrypt the cluster and the boot volumes used by the cluster to enhance security. \u003cbr\u003e\u003cb\u003e- Observability services\u003c/b\u003e such as [Cloud automation for Cloud Monitoring](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/deploy-arch-ibm-cloud-monitoring-73debdbf-894f-4c14-81c7-5ece3a70b67d-global) to provide robust monitoring capabilities and capture essential metrics such as CPU and memory utilization, to help you proactively monitor system performance and resource consumption, [Cloud automation for Activity Tracker Event Routing](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/deploy-arch-ibm-activity-tracker-918453c3-4f97-4583-8c4a-83ef12fc7916-global) to monitor how users and applications interact with the cluster, to support compliance and auditability, [Cloud automation for Cloud Logs](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/deploy-arch-ibm-cloud-logs-63d8ae58-fbf3-41ce-b844-0fb5b85882ab-global) to collect, view, and analyze platform logs related to the cluster and logs generated by applications deployed on the cluster. \u003cbr\u003e- [\u003cb\u003eSecrets Manager\u003c/b\u003e](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/deploy-arch-ibm-secrets-manager-6d6ebc76-7bbd-42f5-8bc7-78f4fabd5944-global) to centrally manage Ingress subdomain certificates, ensuring secure management of sensitive credentials.\u003cbr\u003e\u003cbr\u003eThus this architecture enables seamless integration, enhanced security, and comprehensive monitoring for your cloud-native applications."
+							}
+						]
+					},
+					"dependencies": [
+						{
+							"name": "deploy-arch-ibm-slz-vpc",
+							"id": "9fc0fa64-27af-4fed-9dce-47b3640ba739-global",
+							"version": "v8.7.0",
+							"flavors": [
+								"fully-configurable"
+							],
+							"catalog_id": "1082e7d2-5e2f-0a11-a3bc-f88a8e1931fc",
+							"optional": false,
+							"on_by_default": true,
+							"default_flavor": "",
+							"input_mapping": [
+								{
+									"dependency_input": "prefix",
+									"version_input": "prefix",
+									"reference_version": true
+								},
+								{
+									"dependency_input": "existing_resource_group_name",
+									"version_input": "existing_resource_group_name",
+									"reference_version": true
+								},
+								{
+									"dependency_input": "region",
+									"version_input": "region",
+									"reference_version": true
+								},
+								{
+									"dependency_output": "vpc_crn",
+									"version_input": "existing_vpc_crn"
+								},
+								{
+									"dependency_input": "subnets",
+									"version_input": "subnets",
+									"reference_version": true
+								},
+								{
+									"dependency_input": "network_acls",
+									"version_input": "network_acls",
+									"reference_version": true
+								}
+							],
+							"description": "Configure the VPC and subnets required to deploy your OpenShift cluster."
+						},
+						{
+							"name": "deploy-arch-ibm-kms",
+							"id": "2cad4789-fa90-4886-9c9e-857081c273ee-global",
+							"version": "v5.4.0",
+							"flavors": [
+								"fully-configurable"
+							],
+							"catalog_id": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3",
+							"optional": true,
+							"on_by_default": true,
+							"default_flavor": "",
+							"input_mapping": [
+								{
+									"version_input": "kms_encryption_enabled_cluster",
+									"value": true
+								},
+								{
+									"dependency_output": "kms_instance_crn",
+									"version_input": "existing_kms_instance_crn"
+								},
+								{
+									"dependency_input": "prefix",
+									"version_input": "prefix",
+									"reference_version": true
+								},
+								{
+									"dependency_input": "existing_resource_group_name",
+									"version_input": "existing_resource_group_name",
+									"reference_version": true
+								},
+								{
+									"dependency_input": "region",
+									"version_input": "region",
+									"reference_version": true
+								}
+							],
+							"description": "Integrate IBM Key Protect to manage encryption keys for your cluster, securing persistent volumes and supporting compliance. If unselected, encryption is still applied using IBM-managed keys."
+						},
+						{
+							"name": "deploy-arch-ibm-cos",
+							"id": "68921490-2778-4930-ac6d-bae7be6cd958-global",
+							"version": "v10.5.0",
+							"flavors": [
+								"instance"
+							],
+							"catalog_id": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3",
+							"optional": false,
+							"on_by_default": true,
+							"default_flavor": "",
+							"input_mapping": [
+								{
+									"dependency_output": "cos_instance_crn",
+									"version_input": "existing_cos_instance_crn"
+								},
+								{
+									"dependency_input": "prefix",
+									"version_input": "prefix",
+									"reference_version": true
+								},
+								{
+									"dependency_input": "existing_resource_group_name",
+									"version_input": "existing_resource_group_name",
+									"reference_version": true
+								}
+							],
+							"description": "Set up a Cloud Object Storage (COS) instance and bucket to serve as internal registry storage for your OpenShift cluster."
+						},
+						{
+							"name": "deploy-arch-ibm-cloud-logs",
+							"id": "63d8ae58-fbf3-41ce-b844-0fb5b85882ab-global",
+							"version": "v1.9.0",
+							"flavors": [
+								"fully-configurable"
+							],
+							"catalog_id": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3",
+							"optional": true,
+							"on_by_default": true,
+							"default_flavor": "",
+							"input_mapping": [
+								{
+									"dependency_input": "prefix",
+									"version_input": "prefix",
+									"reference_version": true
+								},
+								{
+									"dependency_input": "existing_resource_group_name",
+									"version_input": "existing_resource_group_name",
+									"reference_version": true
+								},
+								{
+									"dependency_input": "region",
+									"version_input": "region",
+									"reference_version": true
+								},
+								{
+									"dependency_input": "existing_cos_instance_crn",
+									"version_input": "existing_cos_instance_crn",
+									"reference_version": true
+								},
+								{
+									"dependency_input": "existing_kms_instance_crn",
+									"version_input": "existing_kms_instance_crn",
+									"reference_version": true
+								},
+								{
+									"dependency_input": "logs_routing_tenant_regions",
+									"version_input": "logs_routing_tenant_regions",
+									"reference_version": true
+								}
+							],
+							"description": "Set up an IBM Cloud Logs instance to analyze platform logs."
+						},
+						{
+							"name": "deploy-arch-ibm-cloud-monitoring",
+							"id": "73debdbf-894f-4c14-81c7-5ece3a70b67d-global",
+							"version": "v1.9.0",
+							"flavors": [
+								"fully-configurable"
+							],
+							"catalog_id": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3",
+							"optional": true,
+							"on_by_default": true,
+							"default_flavor": "",
+							"input_mapping": [
+								{
+									"dependency_input": "prefix",
+									"version_input": "prefix",
+									"reference_version": true
+								},
+								{
+									"dependency_input": "existing_resource_group_name",
+									"version_input": "existing_resource_group_name",
+									"reference_version": true
+								},
+								{
+									"dependency_input": "region",
+									"version_input": "region",
+									"reference_version": true
+								},
+								{
+									"dependency_input": "enable_platform_metrics",
+									"version_input": "enable_platform_metrics",
+									"reference_version": true
+								}
+							],
+							"description": "Set up a Cloud Monitoring instance to collect platform metrics."
+						},
+						{
+							"name": "deploy-arch-ibm-activity-tracker",
+							"id": "918453c3-4f97-4583-8c4a-83ef12fc7916-global",
+							"version": "v1.4.3",
+							"flavors": [
+								"fully-configurable"
+							],
+							"catalog_id": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3",
+							"optional": true,
+							"on_by_default": true,
+							"default_flavor": "",
+							"input_mapping": [
+								{
+									"dependency_input": "prefix",
+									"version_input": "prefix",
+									"reference_version": true
+								},
+								{
+									"dependency_input": "region",
+									"version_input": "region",
+									"reference_version": true
+								},
+								{
+									"dependency_input": "existing_resource_group_name",
+									"version_input": "existing_resource_group_name",
+									"reference_version": true
+								},
+								{
+									"dependency_input": "existing_cos_instance_crn",
+									"version_input": "existing_cos_instance_crn",
+									"reference_version": true
+								},
+								{
+									"dependency_input": "existing_kms_instance_crn",
+									"version_input": "existing_kms_instance_crn",
+									"reference_version": true
+								}
+							],
+							"description": "Configure Activity Tracker Event Routing to direct auditing events appropriately."
+						},
+						{
+							"name": "deploy-arch-ibm-secrets-manager",
+							"id": "6d6ebc76-7bbd-42f5-8bc7-78f4fabd5944-global",
+							"version": "v2.11.0",
+							"flavors": [
+								"fully-configurable"
+							],
+							"catalog_id": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3",
+							"optional": true,
+							"on_by_default": true,
+							"default_flavor": "",
+							"input_mapping": [
+								{
+									"dependency_input": "prefix",
+									"version_input": "prefix",
+									"reference_version": true
+								},
+								{
+									"dependency_input": "existing_resource_group_name",
+									"version_input": "existing_resource_group_name",
+									"reference_version": true
+								},
+								{
+									"dependency_input": "region",
+									"version_input": "region",
+									"reference_version": true
+								},
+								{
+									"dependency_input": "service_plan",
+									"version_input": "secrets_manager_service_plan",
+									"reference_version": true
+								},
+								{
+									"dependency_input": "secrets_manager_endpoint_type",
+									"version_input": "secrets_manager_endpoint_type",
+									"reference_version": true
+								},
+								{
+									"dependency_output": "secrets_manager_crn",
+									"version_input": "existing_secrets_manager_instance_crn"
+								},
+								{
+									"version_input": "enable_secrets_manager_integration",
+									"value": true
+								}
+							],
+							"description": "Provision a Secrets Manager instance to securely store and manage sensitive credentials—such as certificates—used by services integrated with your cluster."
+						},
+						{
+							"name": "deploy-arch-ibm-scc-workload-protection",
+							"id": "4322cf44-2289-49aa-a719-dd79e39b14dc-global",
+							"version": "v1.14.0",
+							"flavors": [
+								"fully-configurable"
+							],
+							"catalog_id": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3",
+							"optional": true,
+							"on_by_default": true,
+							"default_flavor": "",
+							"input_mapping": [
+								{
+									"dependency_input": "prefix",
+									"version_input": "prefix",
+									"reference_version": true
+								},
+								{
+									"dependency_input": "existing_resource_group_name",
+									"version_input": "existing_resource_group_name",
+									"reference_version": true
+								},
+								{
+									"dependency_input": "region",
+									"version_input": "region",
+									"reference_version": true
+								}
+							],
+							"description": "Integrate with Workload Protection to monitor and manage your cluster’s security posture, helping detect misconfigurations and enforce compliance."
+						}
+					],
+					"dependency_version_2": true,
+					"release_notes_url": "https://cloud.ibm.com/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-secure-infrastructure-vpc-relnotes",
+					"configuration": [
+						{
+							"key": "ibmcloud_api_key",
+							"type": "password",
+							"description": "The IBM Cloud api key.",
+							"required": true,
+							"virtual": false
+						},
+						{
+							"key": "prefix",
+							"type": "string",
+							"default_value": "dev",
+							"value_constraints": [
+								{
+									"type": "regex",
+									"description": "Prefix must begin with a lowercase letter and may contain only lowercase letters, digits, and hyphens '-'. It must not end with a hyphen('-'), and cannot contain consecutive hyphens ('--'). It should not exceed 16 characters",
+									"value": "^$|^__NULL__$|^[a-z](?!.*--)(?:[a-z0-9-]{0,14}[a-z0-9])?$"
+								}
+							],
+							"description": "The prefix to add to all resources that this solution creates (e.g `prod`, `test`, `dev`). To skip using a prefix, set this value to null or an empty string. [Learn more](https://terraform-ibm-modules.github.io/documentation/#/prefix.md).",
+							"required": true,
+							"virtual": false,
+							"random_string": {
+								"length": 4
+							}
+						},
+						{
+							"key": "cluster_name",
+							"type": "string",
+							"default_value": "openshift",
+							"description": "The name of the new IBM Cloud OpenShift Cluster. If a `prefix` input variable is specified, it is added to this name in the `\u003cprefix\u003e-value` format.",
+							"required": true,
+							"virtual": false
+						},
+						{
+							"key": "openshift_version",
+							"type": "string",
+							"default_value": "4.18",
+							"description": "Version of the OpenShift cluster to provision.",
+							"required": true,
+							"options": [
+								{
+									"displayname": "4.18",
+									"value": "4.18"
+								},
+								{
+									"displayname": "4.17",
+									"value": "4.17"
+								},
+								{
+									"displayname": "4.16",
+									"value": "4.16"
+								},
+								{
+									"displayname": "4.15",
+									"value": "4.15"
+								},
+								{
+									"displayname": "4.14",
+									"value": "4.14"
+								}
+							],
+							"virtual": false
+						},
+						{
+							"key": "default_worker_pool_machine_type",
+							"type": "string",
+							"default_value": "bx2.4x16",
+							"description": "The machine type for worker nodes.[Learn more](https://cloud.ibm.com/docs/openshift?topic=openshift-vpc-flavors)",
+							"required": true,
+							"options": [
+								{
+									"displayname": "bx2.4x16",
+									"value": "bx2.4x16"
+								},
+								{
+									"displayname": "bx2.16x64",
+									"value": "bx2.16x64"
+								},
+								{
+									"displayname": "bx2.32x128",
+									"value": "bx2.32x128"
+								},
+								{
+									"displayname": "bx2.48x192",
+									"value": "bx2.48x192"
+								},
+								{
+									"displayname": "bx2.8x32",
+									"value": "bx2.8x32"
+								},
+								{
+									"displayname": "bx3d.128x640",
+									"value": "bx3d.128x640"
+								},
+								{
+									"displayname": "bx3d.16x80",
+									"value": "bx3d.16x80"
+								},
+								{
+									"displayname": "bx3d.24x120",
+									"value": "bx3d.24x120"
+								},
+								{
+									"displayname": "bx3d.32x160",
+									"value": "bx3d.32x160"
+								},
+								{
+									"displayname": "bx3d.48x240",
+									"value": "bx3d.48x240"
+								},
+								{
+									"displayname": "bx3d.64x320",
+									"value": "bx3d.64x320"
+								},
+								{
+									"displayname": "bx3d.8x40",
+									"value": "bx3d.8x40"
+								},
+								{
+									"displayname": "bx3d.96x480",
+									"value": "bx3d.96x480"
+								},
+								{
+									"displayname": "cx2.16x32",
+									"value": "cx2.16x32"
+								},
+								{
+									"displayname": "cx2.32x64",
+									"value": "cx2.32x64"
+								},
+								{
+									"displayname": "cx2.48x96",
+									"value": "cx2.48x96"
+								},
+								{
+									"displayname": "cx3d.128x320",
+									"value": "cx3d.128x320"
+								},
+								{
+									"displayname": "cx3d.16x40",
+									"value": "cx3d.16x40"
+								},
+								{
+									"displayname": "cx3d.24x60",
+									"value": "cx3d.24x60"
+								},
+								{
+									"displayname": "cx3d.32x80",
+									"value": "cx3d.32x80"
+								},
+								{
+									"displayname": "cx3d.48x120",
+									"value": "cx3d.48x120"
+								},
+								{
+									"displayname": "cx3d.64x160",
+									"value": "cx3d.64x160"
+								},
+								{
+									"displayname": "cx3d.96x240",
+									"value": "cx3d.96x240"
+								},
+								{
+									"displayname": "mx2.128x1024",
+									"value": "mx2.128x1024"
+								},
+								{
+									"displayname": "mx2.16x128",
+									"value": "mx2.16x128"
+								},
+								{
+									"displayname": "mx2.32x256",
+									"value": "mx2.32x256"
+								},
+								{
+									"displayname": "mx2.48x384",
+									"value": "mx2.48x384"
+								},
+								{
+									"displayname": "mx2.64x512",
+									"value": "mx2.64x512"
+								},
+								{
+									"displayname": "mx2.8x64",
+									"value": "mx2.8x64"
+								},
+								{
+									"displayname": "mx3d.128x1280",
+									"value": "mx3d.128x1280"
+								},
+								{
+									"displayname": "mx3d.24x240",
+									"value": "mx3d.24x240"
+								},
+								{
+									"displayname": "mx3d.32x320",
+									"value": "mx3d.32x320"
+								},
+								{
+									"displayname": "mx3d.48x480",
+									"value": "mx3d.48x480"
+								},
+								{
+									"displayname": "mx3d.64x640",
+									"value": "mx3d.64x640"
+								},
+								{
+									"displayname": "mx3d.96x960",
+									"value": "mx3d.96x960"
+								},
+								{
+									"displayname": "bx2d.metal.96x384 (Only available in Toronto (ca-tor))",
+									"value": "bx2d.metal.96x384"
+								},
+								{
+									"displayname": "cx2d.metal.96x192 (Only available in Toronto (ca-tor)) ",
+									"value": "cx2d.metal.96x192"
+								},
+								{
+									"displayname": "mx2d.metal.96x768 (Only available in Toronto (ca-tor))) ",
+									"value": "mx2d.metal.96x768"
+								},
+								{
+									"displayname": "mx2.16x128.2000gb (Not available in Sao Paulo (br-sao), Montreal (ca-mon), Madrid (eu-es), Osaka (jp-osa))",
+									"value": "mx2.16x128.2000gb"
+								},
+								{
+									"displayname": "ox2.128x1024 (Not available in Sao Paulo (br-sao), Montreal (ca-mon))",
+									"value": "ox2.128x1024"
+								},
+								{
+									"displayname": "ox2.16x128 (Not available in Sao Paulo (br-sao), Montreal (ca-mon))",
+									"value": "ox2.16x128"
+								},
+								{
+									"displayname": "ox2.32x256 (Not available in Sao Paulo (br-sao), Montreal (ca-mon))",
+									"value": "ox2.32x256"
+								},
+								{
+									"displayname": "ox2.64x512 (Not available in Sao Paulo (br-sao), Montreal (ca-mon))",
+									"value": "ox2.64x512"
+								},
+								{
+									"displayname": "ox2.8x64 (Not available in Sao Paulo (br-sao), Montreal (ca-mon))",
+									"value": "ox2.8x64"
+								},
+								{
+									"displayname": "ox2.96x768 (Not available in Sao Paulo (br-sao), Montreal (ca-mon))",
+									"value": "ox2.96x768"
+								}
+							],
+							"virtual": false
+						},
+						{
+							"key": "default_worker_pool_workers_per_zone",
+							"type": "number",
+							"default_value": 1,
+							"description": "Number of worker nodes in each zone of the cluster.",
+							"required": true,
+							"virtual": false
+						},
+						{
+							"key": "default_worker_pool_operating_system",
+							"type": "string",
+							"default_value": "RHCOS",
+							"description": "The operating system installed on the worker nodes. [Learn more](https://cloud.ibm.com/docs/openshift?topic=openshift-vpc-flavors)",
+							"required": true,
+							"options": [
+								{
+									"displayname": "RHEL 9",
+									"value": "RHEL_9_64"
+								},
+								{
+									"displayname": "Red Hat CoreOS",
+									"value": "RHCOS"
+								},
+								{
+									"displayname": "RHEL 8",
+									"value": "REDHAT_8_64"
+								}
+							],
+							"virtual": false
+						},
+						{
+							"key": "region",
+							"type": "string",
+							"default_value": "us-south",
+							"description": "Region in which all the resources will be deployed. [Learn More](https://terraform-ibm-modules.github.io/documentation/#/region).",
+							"required": true,
+							"custom_config": {
+								"type": "vpc_region",
+								"grouping": "deployment",
+								"original_grouping": "deployment",
+								"config_constraints": {
+									"generationType": "2"
+								}
+							},
+							"virtual": true,
+							"type_metadata": "string"
+						},
+						{
+							"key": "allow_public_access_to_cluster_management",
+							"type": "boolean",
+							"default_value": true,
+							"description": "Set to true to access the cluster through a public cloud service endpoint. [Learn More](https://cloud.ibm.com/docs/openshift?topic=openshift-access_cluster).",
+							"required": true,
+							"virtual": false
+						},
+						{
+							"key": "enable_platform_metrics",
+							"type": "boolean",
+							"default_value": false,
+							"description": "When set to `true`, the IBM Cloud Monitoring instance will be configured to collect platform metrics from the provided region. ⚠️ You can configure 1 instance only of the IBM Cloud Monitoring service per region to collect platform metrics in that location. Check with the account or service administrator if another monitoring instance has already been configured. You may not have permissions to see all monitoring instances in the region. [Learn more](https://cloud.ibm.com/docs/monitoring?topic=monitoring-platform_metrics_enabling).",
+							"required": true,
+							"options": [
+								{
+									"displayname": "true",
+									"value": "true"
+								},
+								{
+									"displayname": "false",
+									"value": "false"
+								}
+							],
+							"hidden": true,
+							"virtual": true,
+							"type_metadata": "boolean"
+						},
+						{
+							"key": "logs_routing_tenant_regions",
+							"type": "array",
+							"default_value": [],
+							"description": "To manage platform logs that are generated by IBM Cloud services in a region of IBM Cloud, you must create a tenant in each region that you operate. Pass a list of regions to create a tenant in. For example: [\"us-south\", \"us-east\"]. [Learn more](https://cloud.ibm.com/docs/logs-router?topic=logs-router-about-platform-logs).",
+							"required": true,
+							"hidden": true,
+							"virtual": true,
+							"type_metadata": "array"
+						},
+						{
+							"key": "existing_resource_group_name",
+							"type": "string",
+							"default_value": "Default",
+							"description": "The name of an existing resource group to provision the resources. [Learn more](https://cloud.ibm.com/docs/account?topic=account-rgs\u0026interface=ui#create_rgs) about how to create a resource group.",
+							"display_name": "resource_group",
+							"required": false,
+							"custom_config": {
+								"type": "resource_group",
+								"grouping": "deployment",
+								"original_grouping": "deployment",
+								"config_constraints": {
+									"identifier": "rg_name"
+								}
+							},
+							"virtual": false
+						},
+						{
+							"key": "cluster_resource_tags",
+							"type": "array",
+							"default_value": "[]",
+							"description": "Metadata labels describing this cluster deployment, i.e. test.",
+							"required": false,
+							"custom_config": {
+								"type": "array",
+								"grouping": "deployment",
+								"original_grouping": "deployment",
+								"config_constraints": {
+									"type": "string"
+								}
+							},
+							"virtual": false
+						},
+						{
+							"key": "access_tags",
+							"type": "array",
+							"default_value": "[]",
+							"description": "A list of access tags to apply to the resources created by the module.",
+							"required": false,
+							"custom_config": {
+								"type": "array",
+								"grouping": "deployment",
+								"original_grouping": "deployment",
+								"config_constraints": {
+									"type": "string"
+								}
+							},
+							"virtual": false
+						},
+						{
+							"key": "ocp_entitlement",
+							"type": "string",
+							"default_value": "__NULL__",
+							"description": "Value that is applied to the entitlements for OCP cluster provisioning.",
+							"required": false,
+							"virtual": false
+						},
+						{
+							"key": "cluster_ready_when",
+							"type": "string",
+							"default_value": "IngressReady",
+							"description": "The cluster is ready based on one of the following:: MasterNodeReady (not recommended), OneWorkerNodeReady, Normal, IngressReady.",
+							"required": false,
+							"options": [
+								{
+									"displayname": "Normal",
+									"value": "Normal"
+								},
+								{
+									"displayname": "IngressReady",
+									"value": "IngressReady"
+								},
+								{
+									"displayname": "OneWorkerNodeReady",
+									"value": "OneWorkerNodeReady"
+								},
+								{
+									"displayname": "MasterNodeReady",
+									"value": "MasterNodeReady"
+								}
+							],
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "enable_ocp_console",
+							"type": "boolean",
+							"default_value": "__NULL__",
+							"description": "Flag to specify whether to enable or disable the OpenShift console. If set to `null` the module does not modify the current setting on the cluster. Keep in mind that when this input is set to `true` or `false` on a cluster with private only endpoint enabled, the runtime must be able to access the private endpoint.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "addons",
+							"type": "object",
+							"default_value": "{}",
+							"description": "Map of OCP cluster add-on versions to install (NOTE: The 'vpc-block-csi-driver' add-on is installed by default for VPC clusters and 'ibm-storage-operator' is installed by default in OCP 4.15 and later, however you can explicitly specify it here if you wish to choose a later version than the default one). [Check supported addons and versions here](https://cloud.ibm.com/docs/containers?topic=containers-supported-cluster-addon-versions). [Learn more](https://github.com/terraform-ibm-modules/terraform-ibm-base-ocp-vpc/blob/main/solutions/fully-configurable/DA_docs.md#options-with-addons)",
+							"required": false,
+							"hidden": true,
+							"custom_config": {
+								"type": "code_editor",
+								"grouping": "deployment",
+								"original_grouping": "deployment"
+							},
+							"virtual": false
+						},
+						{
+							"key": "manage_all_addons",
+							"type": "boolean",
+							"default_value": false,
+							"description": "Instructs deployable architecture to manage all cluster addons, even if addons were installed outside of the module. If set to 'true' this deployable architecture destroys any addons that were installed by other sources.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "additional_worker_pools",
+							"type": "array",
+							"default_value": "[]",
+							"description": "List of additional worker pools. [Learn more](https://github.com/terraform-ibm-modules/terraform-ibm-base-ocp-vpc/blob/main/solutions/fully-configurable/DA_docs.md#options-with-worker-pools)",
+							"required": false,
+							"hidden": true,
+							"custom_config": {
+								"type": "code_editor",
+								"grouping": "deployment",
+								"original_grouping": "deployment"
+							},
+							"virtual": false
+						},
+						{
+							"key": "worker_pools_taints",
+							"type": "object",
+							"default_value": "__NULL__",
+							"description": "Optional, Map of lists containing node taints by node-pool name. [Learn more](https://github.com/terraform-ibm-modules/terraform-ibm-base-ocp-vpc/blob/main/solutions/fully-configurable/DA_docs.md#options-with-worker-pools-taints)",
+							"required": false,
+							"hidden": true,
+							"custom_config": {
+								"type": "code_editor",
+								"grouping": "deployment",
+								"original_grouping": "deployment"
+							},
+							"virtual": false
+						},
+						{
+							"key": "ignore_worker_pool_size_changes",
+							"type": "boolean",
+							"default_value": false,
+							"description": "Enable if using worker autoscaling. Stops Terraform managing worker count.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "allow_default_worker_pool_replacement",
+							"type": "boolean",
+							"default_value": false,
+							"description": "Set to true to allow the module to recreate a default worker pool. Only use in the case where you are getting an error indicating that the default worker pool cannot be replaced on apply. Once the default worker pool is handled separately, if you wish to make any change to the default worker pool which requires the re-creation of the default pool set this variable to true.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "default_worker_pool_labels",
+							"type": "object",
+							"default_value": "{}",
+							"description": "A set of key-value labels assigned to the worker pool for identification. [Learn more](https://github.com/terraform-ibm-modules/terraform-ibm-base-ocp-vpc/blob/main/solutions/fully-configurable/DA_docs.md#default-worker-pool-labels)",
+							"required": false,
+							"hidden": true,
+							"custom_config": {
+								"type": "code_editor",
+								"grouping": "deployment",
+								"original_grouping": "deployment"
+							},
+							"virtual": false
+						},
+						{
+							"key": "enable_autoscaling_for_default_pool",
+							"type": "boolean",
+							"default_value": false,
+							"description": "Set `true` to enable automatic scaling of worker based on workload demand.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "default_pool_minimum_number_of_nodes",
+							"type": "number",
+							"default_value": 1,
+							"description": "The minimum number of worker nodes allowed in the pool, ensuring at least one worker is always running.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "default_pool_maximum_number_of_nodes",
+							"type": "number",
+							"default_value": 3,
+							"description": "The maximum number of worker nodes allowed in the pool, preventing the pool from exceeding three workers.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "additional_security_group_ids",
+							"type": "array",
+							"default_value": "[]",
+							"description": "A list of security group IDs that are attached to the worker nodes for additional network security controls.",
+							"required": false,
+							"hidden": true,
+							"custom_config": {
+								"type": "array",
+								"grouping": "deployment",
+								"original_grouping": "deployment",
+								"config_constraints": {
+									"type": "string"
+								}
+							},
+							"virtual": false
+						},
+						{
+							"key": "existing_subnet_ids",
+							"type": "array",
+							"default_value": "[]",
+							"description": "The list of IDs of existing subnets where the default worker pool nodes of the cluster are provisioned.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "use_private_endpoint",
+							"type": "boolean",
+							"default_value": true,
+							"description": "Set this to true to force all API calls to use the IBM Cloud private endpoints.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "cluster_config_endpoint_type",
+							"type": "string",
+							"default_value": "default",
+							"description": "Specify which type of endpoint to use for cluster config access: 'default', 'private', 'vpe', 'link'. A 'default' value uses the default endpoint of the cluster.",
+							"required": false,
+							"options": [
+								{
+									"displayname": "default",
+									"value": "default"
+								},
+								{
+									"displayname": "private",
+									"value": "private"
+								},
+								{
+									"displayname": "vpe",
+									"value": "vpe"
+								},
+								{
+									"displayname": "link",
+									"value": "link"
+								}
+							],
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "allow_outbound_traffic",
+							"type": "boolean",
+							"default_value": true,
+							"description": "Set to true to allow public outbound access from the cluster workers.",
+							"required": false,
+							"virtual": false
+						},
+						{
+							"key": "verify_worker_network_readiness",
+							"type": "boolean",
+							"default_value": true,
+							"description": "By setting this to true, a script runs kubectl commands to verify that all worker nodes can communicate successfully with the master. If the runtime does not have access to the kube cluster to run kubectl commands, set this value to false.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "pod_subnet_cidr",
+							"type": "string",
+							"default_value": "__NULL__",
+							"description": "Specify a custom subnet CIDR to provide private IP addresses for pods. The subnet must have a CIDR of at least `/23` or larger. Default value is `172.30.0.0/16` when the variable is set to `null`.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "service_subnet_cidr",
+							"type": "string",
+							"default_value": "__NULL__",
+							"description": "Specify a custom subnet CIDR to provide private IP addresses for services. The subnet must be at least `/24` or larger. Default value is `172.21.0.0/16` when the variable is set to `null`.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "custom_security_group_ids",
+							"type": "array",
+							"default_value": "__NULL__",
+							"description": "Security groups to add to all worker nodes. This comes in addition to the IBM maintained security group if `attach_ibm_managed_security_group` is set to true. If this variable is set, the default VPC security group is NOT assigned to the worker nodes.",
+							"required": false,
+							"hidden": true,
+							"custom_config": {
+								"type": "array",
+								"grouping": "deployment",
+								"original_grouping": "deployment",
+								"config_constraints": {
+									"type": "string"
+								}
+							},
+							"virtual": false
+						},
+						{
+							"key": "attach_ibm_managed_security_group",
+							"type": "boolean",
+							"default_value": true,
+							"description": "Specify whether to attach the IBM-defined default security group (whose name is kube-\u003cclusterid\u003e) to all worker nodes. Only applicable if `custom_security_group_ids` is set.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "additional_lb_security_group_ids",
+							"type": "array",
+							"default_value": "[]",
+							"description": "A list of additional security group IDs to be attached to the load balancers associated with the cluster. These groups are applied in addition to the default IBM-managed security group.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "number_of_lbs",
+							"type": "number",
+							"default_value": 1,
+							"description": "The total number of Load Balancers in the cluster that should be associated with the security groups defined in `additional_lb_security_group_ids` variable.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "additional_vpe_security_group_ids",
+							"type": "object",
+							"default_value": "{}",
+							"description": "Additional security groups to add to all existing load balancers. This comes in addition to the IBM maintained security group. [Learn more](https://github.com/terraform-ibm-modules/terraform-ibm-base-ocp-vpc/blob/main/solutions/fully-configurable/DA_docs.md#options-with-additional-vpe-security-group-ids)",
+							"required": false,
+							"hidden": true,
+							"custom_config": {
+								"type": "code_editor",
+								"grouping": "deployment",
+								"original_grouping": "deployment"
+							},
+							"virtual": false
+						},
+						{
+							"key": "ibmcloud_kms_api_key",
+							"type": "password",
+							"description": "The IBM Cloud API key that can create a root key and key ring in the key management service (KMS) instance for the cluster. If not specified, the 'ibmcloud_api_key' variable is used. Specify this key if the KMS instance in `existing_kms_instance_crn` is in an account that is different from the cluster's account. Leave this input empty if both the cluster and the KMS instance are in the same account.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "kms_encryption_enabled_cluster",
+							"type": "boolean",
+							"default_value": false,
+							"description": "Set to true to enable KMS encryption for the cluster's Object Storage bucket. When set to true, a value must be passed for either `existing_cluster_kms_key_crn` or `existing_kms_instance_crn`.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "existing_kms_instance_crn",
+							"type": "string",
+							"default_value": "__NULL__",
+							"value_constraints": [
+								{
+									"type": "regex",
+									"description": "The value provided for 'existing_kms_instance_crn' is not valid.",
+									"value": "^__NULL__$|^crn:(.*:){3}(kms|hs-crypto):(.*:){2}[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}::$"
+								}
+							],
+							"description": "The CRN of an existing KMS instance (Hyper Protect Crypto Services or Key Protect). If the KMS instance is in different account you must also provide a value for `ibmcloud_kms_api_key`.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "existing_cluster_kms_key_crn",
+							"type": "string",
+							"default_value": "__NULL__",
+							"value_constraints": [
+								{
+									"type": "regex",
+									"description": "The value provided for 'existing_cluster_kms_key_crn' in not valid.",
+									"value": "^__NULL__$|^crn:(.*:){3}(kms|hs-crypto):(.*:){2}[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}:key:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+								}
+							],
+							"description": "The CRN of an existing KMS key to use for encrypting the Object Storage of the Cluster. If no value is set for this variable, specify a value for `existing_kms_instance_crn` variable to create a key ring and key.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "kms_endpoint_type",
+							"type": "string",
+							"default_value": "private",
+							"description": "The endpoint for communicating with the KMS instance. Possible values: `public`, `private`. Applies only if `kms_encryption_enabled_cluster` is true",
+							"required": false,
+							"options": [
+								{
+									"displayname": "Public",
+									"value": "public"
+								},
+								{
+									"displayname": "Private",
+									"value": "private"
+								}
+							],
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "cluster_kms_key_name",
+							"type": "string",
+							"default_value": "cluster-key",
+							"description": "The name of the key to be created for the cluster's Object Storage bucket encryption. Applies only if not specifying an existing key. If a prefix input variable is specified, the prefix is added to the name in the `\u003cprefix\u003e-\u003cname\u003e` format.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "cluster_kms_key_ring_name",
+							"type": "string",
+							"default_value": "cluster-key-ring",
+							"description": "The name of the key ring to be created for the cluster's Object Storage bucket encryption key. Applies only if not specifying an existing key. If a prefix input variable is specified, the prefix is added to the name in the `\u003cprefix\u003e-\u003cname\u003e` format.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "kms_encryption_enabled_boot_volume",
+							"type": "boolean",
+							"default_value": false,
+							"description": "Set this to true to control the encryption keys used to encrypt the data that for the block storage volumes for VPC. If set to false, the data is encrypted by using randomly generated keys. For more info on encrypting block storage volumes, see https://cloud.ibm.com/docs/vpc?topic=vpc-creating-instances-byok",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "existing_boot_volume_kms_key_crn",
+							"type": "string",
+							"default_value": "__NULL__",
+							"value_constraints": [
+								{
+									"type": "regex",
+									"description": "The value provided for 'existing_boot_volume_kms_key_crn' in not valid.",
+									"value": "^__NULL__$|^crn:(.*:){3}(kms|hs-crypto):(.*:){2}[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}:key:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+								}
+							],
+							"description": "The CRN of an existing KMS key to use to encrypt the the block storage volumes for VPC. If no value is set for this variable, specify a value for either the `existing_kms_instance_crn` variable to create a key ring and key.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "boot_volume_kms_key_name",
+							"type": "string",
+							"default_value": "boot-volume-key",
+							"description": "The name for the key created for the block storage volumes. Applies only if not specifying an existing key. If a prefix input variable is specified, the prefix is added to the name in the `\u003cprefix\u003e-\u003cname\u003e` format.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "boot_volume_kms_key_ring_name",
+							"type": "string",
+							"default_value": "boot-volume-key-ring",
+							"description": "The name for the key ring created for the block storage volumes key. Applies only if not specifying an existing key. If a prefix input variable is specified, the prefix is added to the name in the `\u003cprefix\u003e-\u003cname\u003e` format.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "cbr_rules",
+							"type": "array",
+							"default_value": "[]",
+							"description": "The list of context-based restriction rules to create. [Learn more](https://github.com/terraform-ibm-modules/terraform-ibm-base-ocp-vpc/blob/main/solutions/fully-configurable/DA_docs.md#options-with-cbr)",
+							"display_name": "openshift_cluster_cbr_rules",
+							"required": false,
+							"hidden": true,
+							"custom_config": {
+								"type": "code_editor",
+								"grouping": "deployment",
+								"original_grouping": "deployment"
+							},
+							"virtual": false
+						},
+						{
+							"key": "enable_secrets_manager_integration",
+							"type": "boolean",
+							"default_value": false,
+							"description": "Integrate with IBM Cloud Secrets Manager so you can centrally manage Ingress subdomain certificates and other secrets. [Learn more](https://cloud.ibm.com/docs/containers?topic=containers-secrets-mgr)",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "existing_secrets_manager_instance_crn",
+							"type": "string",
+							"default_value": "__NULL__",
+							"value_constraints": [
+								{
+									"type": "regex",
+									"description": "The value provided for 'existing_secrets_manager_instance_crn' is not valid.",
+									"value": "^__NULL__$|^crn:(.*:){3}secrets-manager:(.*:){2}[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}::$"
+								}
+							],
+							"description": "CRN of the Secrets Manager instance where Ingress certificate secrets are stored. If 'enable_secrets_manager_integration' is set to true then this value is required.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "secrets_manager_secret_group_id",
+							"type": "string",
+							"default_value": "__NULL__",
+							"value_constraints": [
+								{
+									"type": "regex",
+									"description": "The value provided for 'secrets_manager_secret_group_id' is not valid.",
+									"value": "^__NULL__$|[a-fA-F0-9]{8}-([a-fA-F0-9]{4}-){3}[a-fA-F0-9]{12}"
+								}
+							],
+							"description": "Secret group ID where Ingress secrets are stored in the Secrets Manager instance. If 'enable_secrets_manager_integration' is set to true and 'secrets_manager_secret_group_id' is not provided, a new group will be created with the same name as cluster_id.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "secrets_manager_endpoint_type",
+							"type": "string",
+							"default_value": "private",
+							"description": "The type of endpoint (public or private) to connect to the Secrets Manager API. The Terraform provider uses this endpoint type to interact with the Secrets Manager API.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "secrets_manager_service_plan",
+							"type": "string",
+							"default_value": "standard",
+							"description": "The pricing plan to use when provisioning a Secrets Manager instance. Possible values: `standard`, `trial`. You can create only one Trial instance of Secrets Manager per account. Before you can create a new Trial instance, you must delete the existing Trial instance and its reclamation. [Learn more](https://cloud.ibm.com/docs/secrets-manager?topic=secrets-manager-create-instance\u0026interface=ui#upgrade-instance-standard).",
+							"required": true,
+							"options": [
+								{
+									"displayname": "Standard",
+									"value": "standard"
+								},
+								{
+									"displayname": "Trial",
+									"value": "trial"
+								}
+							],
+							"virtual": true,
+							"type_metadata": "string"
+						},
+						{
+							"key": "existing_vpc_crn",
+							"type": "string",
+							"default_value": "__NOT_SET__",
+							"value_constraints": [
+								{
+									"type": "regex",
+									"description": "The value provided for 'existing_vpc_crn' is not valid.",
+									"value": "^crn:(.*:){3}is:(.*:){2}:vpc:[0-9a-z]{4}-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+								}
+							],
+							"description": "The CRN of an existing VPC. If the user provides only the `existing_vpc_crn` the default worker pool is provisioned across all the subnets in the VPC.",
+							"required": true,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "existing_cos_instance_crn",
+							"type": "string",
+							"default_value": "__NOT_SET__",
+							"value_constraints": [
+								{
+									"type": "regex",
+									"description": "The value provided for 'existing_cos_instance_crn' is not valid.",
+									"value": "^crn:(.*:){3}cloud-object-storage:(.*:){2}[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}::$"
+								}
+							],
+							"description": "The CRN of an already existing Object Storage instance to use for OpenShift internal registry storage.",
+							"required": true,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "skip_ocp_secrets_manager_iam_auth_policy",
+							"type": "boolean",
+							"default_value": false,
+							"description": "To skip creating auth policy that allows OCP cluster 'Manager' role access in the existing Secrets Manager instance for managing ingress certificates.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "skip_cluster_apikey_creation",
+							"type": "boolean",
+							"default_value": false,
+							"description": "To skip resetting the `containers-kubernetes-key` for the given region and resource group.",
+							"required": false,
+							"virtual": false
+						},
+						{
+							"key": "subnets",
+							"default_value": "{\n    zone-1 = [\n      {\n        name           = \"subnet-a\"\n        cidr           = \"10.10.10.0/24\"\n        public_gateway = true\n        acl_name       = \"vpc-acl\"\n        no_addr_prefix = false\n      }\n    ],\n    zone-2 = [\n      {\n        name           = \"subnet-b\"\n        cidr           = \"10.20.10.0/24\"\n        public_gateway = true\n        acl_name       = \"vpc-acl\"\n        no_addr_prefix = false\n      }\n    ],\n    zone-3 = [\n      {\n        name           = \"subnet-c\"\n        cidr           = \"10.30.10.0/24\"\n        public_gateway = true\n        acl_name       = \"vpc-acl\"\n        no_addr_prefix = false\n      }\n    ]\n  }",
+							"description": "List of subnets for the vpc. For each item in each array, a subnet will be created. Items can be either CIDR blocks or total ipv4 addresses. Public gateways will be enabled only in zones where a gateway has been created. [Learn more](https://github.com/terraform-ibm-modules/terraform-ibm-landing-zone-vpc/blob/main/solutions/fully-configurable/DA-types.md#subnets-).",
+							"required": false,
+							"hidden": true,
+							"custom_config": {
+								"type": "code_editor",
+								"grouping": "deployment",
+								"original_grouping": "deployment"
+							},
+							"virtual": true
+						},
+						{
+							"key": "network_acls",
+							"type": "list(object)",
+							"default_value": "[\n  {\n    name                         = \"vpc-acl\"\n    add_ibm_cloud_internal_rules = true\n    add_vpc_connectivity_rules   = true\n    prepend_ibm_rules            = true\n    rules = [\n      {\n        name      = \"allow-all-443-inbound\"\n        action    = \"allow\"\n        direction = \"inbound\"\n        tcp = {\n          port_min = 443\n          port_max = 443\n        }\n        destination = \"0.0.0.0/0\"\n        source      = \"0.0.0.0/0\"\n      },\n      {\n        name      = \"allow-all-80-inbound\"\n        action    = \"allow\"\n        direction = \"inbound\"\n        tcp = {\n          port_min        = 80\n          port_max        = 80\n          source_port_min = 80\n          source_port_max = 80\n        }\n        destination = \"0.0.0.0/0\"\n        source      = \"0.0.0.0/0\"\n      },\n      {\n        name      = \"allow-all-ingress-inbound\"\n        action    = \"allow\"\n        direction = \"inbound\"\n        tcp = {\n          source_port_min = 30000\n          source_port_max = 32767\n        }\n        destination = \"0.0.0.0/0\"\n        source      = \"0.0.0.0/0\"\n      },\n      {\n        name      = \"allow-all-443-outbound\"\n        action    = \"allow\"\n        direction = \"outbound\"\n        tcp = {\n          source_port_min = 443\n          source_port_max = 443\n        }\n        destination = \"0.0.0.0/0\"\n        source      = \"0.0.0.0/0\"\n      },\n      {\n        name      = \"allow-all-80-outbound\"\n        action    = \"allow\"\n        direction = \"outbound\"\n        tcp = {\n          source_port_min = 80\n          source_port_max = 80\n          port_min        = 80\n          port_max        = 80\n        }\n        destination = \"0.0.0.0/0\"\n        source      = \"0.0.0.0/0\"\n      },\n      {\n        name      = \"allow-all-ingress-outbound\"\n        action    = \"allow\"\n        direction = \"outbound\"\n        tcp = {\n          port_min = 30000\n          port_max = 32767\n        }\n        destination = \"0.0.0.0/0\"\n        source      = \"0.0.0.0/0\"\n      }\n    ]\n  }\n]",
+							"description": "The list of ACLs to create. Provide at least one rule for each ACL. [Learn more](https://github.com/terraform-ibm-modules/terraform-ibm-landing-zone-vpc/blob/main/solutions/fully-configurable/DA-types.md#network-acls-).",
+							"required": false,
+							"hidden": true,
+							"custom_config": {
+								"type": "code_editor",
+								"grouping": "deployment",
+								"original_grouping": "deployment"
+							},
+							"virtual": true,
+							"type_metadata": "list(object)"
+						},
+						{
+							"key": "provider_visibility",
+							"type": "string",
+							"default_value": "private",
+							"description": "Set the visibility value for the IBM terraform provider. Supported values are `public`, `private`, `public-and-private`. [Learn more](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/guides/custom-service-endpoints).",
+							"required": false,
+							"options": [
+								{
+									"displayname": "private",
+									"value": "private"
+								},
+								{
+									"displayname": "public",
+									"value": "public"
+								},
+								{
+									"displayname": "public-and-private",
+									"value": "public-and-private"
+								}
+							],
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "enable_kube_audit",
+							"type": "boolean",
+							"default_value": true,
+							"description": "Kubernetes audit logging provides a chronological record of operations performed on the cluster, including by users, administrators, and system components. It is useful for compliance, and security monitoring. Set true to enable kube audit by default. [Learn more](https://cloud.ibm.com/docs/containers?topic=containers-health-audit#audit-api-server)",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "audit_deployment_name",
+							"type": "string",
+							"default_value": "ibmcloud-kube-audit",
+							"description": "The name of log collection deployment and service.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "audit_log_policy",
+							"type": "string",
+							"default_value": "default",
+							"description": "Specify the amount of information that is logged to the API server audit logs by choosing the audit log policy profile to use. Supported values are `default` and `WriteRequestBodies`.",
+							"required": false,
+							"options": [
+								{
+									"displayname": "Default",
+									"value": "default"
+								},
+								{
+									"displayname": "Write Request Bodies",
+									"value": "WriteRequestBodies"
+								}
+							],
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "audit_namespace",
+							"type": "string",
+							"default_value": "ibm-kube-audit",
+							"description": "The name of the namespace where log collection service and a deployment will be created.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "audit_webhook_listener_image",
+							"type": "string",
+							"default_value": "icr.io/ibm/ibmcloud-kube-audit-to-ibm-cloud-logs",
+							"description": "The audit webhook listener image reference in the format of `[registry-url]/[namespace]/[image]`. This solution uses the `icr.io/ibm/ibmcloud-kube-audit-to-ibm-cloud-logs` image to forward logs to IBM Cloud Logs. This image is for demonstration purposes only. For a production solution, configure and maintain your own log forwarding image.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						},
+						{
+							"key": "audit_webhook_listener_image_tag_digest",
+							"type": "string",
+							"default_value": "deaabcb8225e800385413ba420cf3f819d3b0671@sha256:acf123f4dba63534cbc104c6886abedff9d25a22a34ab7b549ede988ed6e7144",
+							"description": "The tag or digest for the audit webhook listener image to deploy. If changing the value, ensure it is compatible with `audit_webhook_listener_image`.",
+							"required": false,
+							"hidden": true,
+							"virtual": false
+						}
+					],
+					"terraform_version": "1.10.5",
+					"outputs": [
+						{
+							"key": "api_vpe",
+							"description": "Details of the API Virtual Private Endpoint (VPE), if it exists. For more info about schema, see https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/is_virtual_endpoint_gateway"
+						},
+						{
+							"key": "operating_system",
+							"description": "The operating system used by the worker nodes in the default worker pool."
+						},
+						{
+							"key": "secrets_manager_integration_config",
+							"description": "Information about the Secrets Manager instance that is used to store the Ingress certificates."
+						},
+						{
+							"key": "next_step_primary_label",
+							"description": "Primary label"
+						},
+						{
+							"key": "ocp_version",
+							"description": "The version of OpenShift running on the provisioned cluster."
+						},
+						{
+							"key": "master_status",
+							"description": "The current status of the Kubernetes master node in the cluster."
+						},
+						{
+							"key": "next_step_secondary_url",
+							"description": "secondary url"
+						},
+						{
+							"key": "ingress_hostname",
+							"description": "The hostname assigned to the Cluster's Ingress subdomain for external access."
+						},
+						{
+							"key": "kms_config",
+							"description": "Configuration details for Key Management Service (KMS) used for encryption in the cluster."
+						},
+						{
+							"key": "vpe_url",
+							"description": "The Virtual Private Endpoint (VPE) URL used for private network access to the cluster."
+						},
+						{
+							"key": "workerpools",
+							"description": "A list of worker pools associated with the provisioned cluster"
+						},
+						{
+							"key": "registry_vpe",
+							"description": "Details of the registry Virtual Private Endpoint (VPE), if it exists. For more info about schema, see https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/is_virtual_endpoint_gateway"
+						},
+						{
+							"key": "next_step_secondary_label",
+							"description": "Secondary label"
+						},
+						{
+							"key": "private_service_endpoint_url",
+							"description": "The Private service endpoint URL for accessing the cluster over a private network."
+						},
+						{
+							"key": "public_service_endpoint_url",
+							"description": "The public service endpoint URL for accessing the cluster over the internet."
+						},
+						{
+							"key": "master_url",
+							"description": "The API endpoint URL for the Kubernetes master node of the cluster."
+						},
+						{
+							"key": "region",
+							"description": "The IBM Cloud region where the cluster is deployed."
+						},
+						{
+							"key": "cluster_id",
+							"description": "The unique identifier assigned to the provisioned OpenShift cluster."
+						},
+						{
+							"key": "next_steps_text",
+							"description": "Next steps text"
+						},
+						{
+							"key": "next_step_primary_url",
+							"description": "primary url"
+						},
+						{
+							"key": "vpc_id",
+							"description": "The ID of the Virtual Private Cloud (VPC) in which the cluster is deployed."
+						},
+						{
+							"key": "resource_group_id",
+							"description": "The ID of the resource group where the cluster is deployed."
+						},
+						{
+							"key": "cluster_name",
+							"description": "The name of the provisioned OpenShift cluster."
+						},
+						{
+							"key": "master_vpe",
+							"description": "Details of the master, or default Virtual Private Endpoint (VPE). For more info about schema, see https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/is_virtual_endpoint_gateway"
+						},
+						{
+							"key": "cos_crn",
+							"description": "The Cloud Resource Name (CRN) of the Object Storage instance associated with the cluster."
+						},
+						{
+							"key": "cluster_crn",
+							"description": "The Cloud Resource Name (CRN) of the provisioned OpenShift cluster."
+						}
+					],
+					"install_type": "fullstack",
+					"scripts": [],
+					"change_notices": {}
+				}
+			]
+		}
+	]
+}
